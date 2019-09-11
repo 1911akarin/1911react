@@ -293,7 +293,7 @@ module.exports = function(webpackEnv) {
         // 'style':path.join(__dirname,'../src/style')
         'style':path.resolve(__dirname,'../src/style'),
         'utils':path.resolve(__dirname,'../src/utils'),
-
+        'pages':path.resolve(__dirname,'../src/pages'),
 
       },
       plugins: [
@@ -367,6 +367,7 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                  ['import',{'libraryName':'antd','style':true}],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
